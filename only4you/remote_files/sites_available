@@ -1,0 +1,24 @@
+server {
+    listen 80;
+    return 301 http://only4you.htb$request_uri;
+}
+
+server {
+	listen 80;
+	server_name only4you.htb;
+
+	location / {
+                include proxy_params;
+                proxy_pass http://unix:/var/www/only4you.htb/only4you.sock;
+	}
+}
+
+server {
+	listen 80;
+	server_name beta.only4you.htb;
+
+        location / {
+                include proxy_params;
+                proxy_pass http://unix:/var/www/beta.only4you.htb/beta.sock;
+        }
+}
