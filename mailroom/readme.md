@@ -6,7 +6,7 @@
 * SQLI, XSS? XSS on all inputs in the next order `title`, `message`, `email`
 * Create a simple framework that generates an xss and uploads it
 to get a proper mail [xss.py](xss.py) and open
-a simple server `python3 -m http.server --bind 0.0.0.0 8000`
+a simple server `python3 -m http.server & python3 xss.py && fg`
 * I get request from `127.0.0.1` from time to time
 meaning I can execute js on the host
 * Useful information that may change between me and the host is
